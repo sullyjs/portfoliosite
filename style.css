@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=PT+Mono&display=fallback');
 
 @font-face {
-  font-family: 'Aspekta';
+  font-family: 'Silkscreen';
 
   font-weight: 500;
 
@@ -9,11 +9,21 @@
 
   font-display: fallback;
 
-  src: url('fonts/Aspekta-500.woff2') format('woff2');
+  src: url('fonts/Silkscreen-500.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Aspekta';
+  font-family: "Silkscreen";
+  font-weight: 650;
+
+  font-style: normal;
+
+  font-display: fallback;
+  src: url(fonts/slkscr.ttf);
+}
+
+@font-face {
+  font-family: 'Silkscreen';
 
   font-weight: 650;
 
@@ -21,7 +31,7 @@
 
   font-display: fallback;
 
-  src: url('fonts/Aspekta-650.woff2') format('woff2');
+  src: url('fonts/Silkscreen-650.woff2') format('woff2');
 }
 
 /*
@@ -916,7 +926,7 @@ select{
   justify-content: center;
   white-space: nowrap;
   border-radius: 9999px;
-  font-family: Aspekta, sans-serif;
+  font-family: Silkscreen, sans-serif;
   font-size: 0.875rem;
   line-height: 1.5715;
   font-weight: 500;
@@ -2009,8 +2019,8 @@ input[type=range]::-moz-focus-outer {
   text-align: center;
 }
 
-.font-aspekta{
-  font-family: Aspekta, sans-serif;
+.font-Silkscreen{
+  font-family: Silkscreen, sans-serif;
 }
 
 .font-inter{
