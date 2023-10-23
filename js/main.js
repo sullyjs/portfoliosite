@@ -47,16 +47,11 @@ searchInput.addEventListener('input', performSearch);
 
 document.addEventListener('DOMContentLoaded', function () {
   const contactForm = document.getElementById('contact-form');
-  const emailInput = document.getElementById('email-input');
-  const messageInput = document.getElementById('message-input');
   const successMessage = document.getElementById('success-message');
 
   contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Get the email and message
-      const email = emailInput.value;
-      const message = messageInput.value;
 
       // You should implement the email sending logic here
       // This typically requires server-side code (e.g., Node.js with Nodemailer or PHP)
@@ -64,4 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // For this example, we'll just display a success message
       successMessage.textContent = 'Email sent successfully!';
   });
+});
+
+document.getElementById('submit-button').addEventListener('click', function () {
+  window.location.href = 'mailto:youremail@example.com';
 });
