@@ -24,3 +24,22 @@ if (lightSwitches.length > 0) {
     });
   });
 }
+
+// JavaScript code to handle the search functionality
+
+// Get references to the input field and search results container
+const searchInput = document.getElementById('search');
+const searchForm = document.getElementById('search-form');
+const searchResults = document.getElementById('search-results');
+
+// Function to perform the search and update the results
+function performSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    // You can implement your search logic here
+    
+    // For this example, we'll just display the query
+    searchResults.textContent = `Search Query: ${query}`;
+}
+
+// Add an event listener to the search input
+searchInput.addEventListener('input', performSearch);
