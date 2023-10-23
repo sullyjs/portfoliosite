@@ -34,7 +34,7 @@ const searchResults = document.getElementById('search-results');
 
 // Function to perform the search and update the results
 function performSearch() {
-    const query = searchInput.value.trim().toLowerCase();
+    const query = searchForm.value.trim().toLowerCase();
     // You can implement your search logic here
     
     // For this example, we'll just display the query
