@@ -64,3 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById('submit-button').addEventListener('click', function () {
   window.location.href = 'mailto:youremail@example.com';
 });
+
+const changeFontButton = document.getElementById('changeFontButton');
+        const body = document.body;
+
+        changeFontButton.addEventListener('click', () => {
+            // Change the font to a different font
+            body.style.fontFamily = "Verdana, sans-serif";
+        });
