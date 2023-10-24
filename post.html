@@ -159,8 +159,7 @@
                                     <header>
                                         <div class="flex items-center justify-between mb-1">
                                             <!-- Post date -->
-                                            <div class="text-xs text-slate-500 uppercase"><span class="text-sky-500">—</span> Oct 23, 2022 <span class="text-slate-400 dark:text-slate-600">·</span> 7 Min read</div>
-                                            
+                                            <div class="text-xs text-slate-500 uppercase"><span class="text-sky-500">—</span> Dec 24, 2023 <span class="text-slate-400 dark:text-slate-600">·</span> 4 Min read</div>
                                             <!-- Share buttons -->
                                             <ul class="inline-flex">
                                                 <li>
@@ -186,90 +185,108 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <h1 class="h1 font-aspekta mb-4">Predicting disease spreading on different populations using the SIR model</h1>
+                                        <h1 class="h1 font-aspekta mb-4">How to Control CSS Animations with JavaScript</h1>
                                     </header>
                                     <!-- Post content -->
-                                    <div class="cxslc c2bb0 cr8w3"> 
-                                    <div class="c9gi4">
-<p>The SIR model is a well-known way to simulate disease spreading for researchers. It has been used for much research considering COVID-19. The model consists of the mutually exclusive susceptible, infected, and recovered compartments. The base model is simple and can give a good indication of the course of a disease. Using the equations for the different compartments and initial states, the disease model can be simulated. The research aims to bring light to the effect of different parameters on the SIR simulation. Results show that upon increasing the initial number of susceptible individuals, an increase in the rate of infection and the maximum number of infected at a time can be seen. However, the time at which this happens stays the same. Moreover, if the initial number of infected individuals increases, the time at which the pandemic breaks out, moves closer. With more susceptible individuals, the disease spreads quicker. Furthermore, with more infected individuals, the disease has a higher chance of spreading at earlier stages.</p>
+                                    <div class="text-slate-500 dark:text-slate-400 space-y-8">
+                                        <p>
+                                            When it comes to animations on the web, developers need to measure the animation's requirements with the right technology -- CSS or JavaScript.
+                                        </p>
+                                        <img class="w-full" src="./images/post-image.jpg" width="692" height="390" alt="Post" />
+                                        <div class="space-y-4">
+                                            <p>
+                                                Web designers sometimes believe that animating in CSS is more difficult than animating in JavaScript. <strong class="font-medium text-slate-800 dark:text-slate-100">While CSS animation does have some limitations</strong>, most of the time it's more capable than we give it credit for! Not to mention, typically more performant.
+                                            </p>
+                                            <p>
+                                                Coupled with a touch of JavaScript, CSS animations and transitions are able to accomplish hardware-accelerated animations and interactions more efficiently than most JavaScript libraries.
+                                                Let's jump straight in!
+                                            </p>
+                                            <p>
+                                                Let's jump straight in!
+                                            </p>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Manipulating CSS Transitions</h2>
+                                            <p>
+                                                There are countless questions on coding forums related to triggering and pausing an element's transition. The solution is actually quite simple using JavaScript.
+                                            </p>
+                                            <p>
+                                                To trigger an element's transition, toggle a class name on that element that triggers it.
+                                            </p>
+                                            <p>
+                                                To pause an element's transition, use getComputedStyle and getPropertyValue at the point in the transition you want to pause it. <a class="font-medium text-sky-500 hover:underline" href="#0">Then set those CSS properties</a> of that element equal to those values you just got.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Using CSS “Callback Functions”</h2>
+                                            <p>
+                                                Some of the most useful yet little-known JavaScript tricks for manipulating CSS transitions and animations are the DOM events they fire. Like: <strong class="font-medium text-slate-800 dark:text-slate-100">animationend, animationstart, and animationiteration for animations</strong> and transitionend for transitions. You might guess what they do. These animation events fire when the animation on an element ends, starts, or completes one iteration, respectively.
+                                            </p>
+                                            <p>
+                                                These events need to be vendor prefixed at this time, so in this demo, we use a function developed by Craig Buckler called PrefixedEvent, which has the parameters element, type, and callback to help make these events cross-browser. Here is his useful article on capturing CSS animations with JavaScript. And <a class="font-medium text-sky-500 hover:underline" href="#0">here is another one</a> determining which animation (name) the event is firing for.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Manipulating CSS Transitions</h2>
+                                            <p>
+                                                Like we just learned, we can watch elements and react to animation-related events: animationStart, animationIteration, and animationEnd. But what happens if you want to change the CSS animation mid-animation? This requires a bit of trickery!
+                                            </p>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h3 class="h3 font-aspekta text-slate-800 dark:text-slate-100">The animation-play-state Property</h3>
+                                            <p>
+                                                The animation-play-state property of CSS is incredibly helpful when you simply need to pause an animation and potentially continue it later. You can change that CSS through JavaScript like this (mind your prefixes):
+                                            </p>
+                                        </div>
+<pre class="overflow-x-auto text-sm text-slate-500 bg-slate-800 p-4 rounded leading-tight">
+<code class="font-pt-mono"><span class="text-sky-300">element</span>.<span class="text-sky-300">style</span>.<span class="text-sky-300">webkitAnimationPlayState</span> <span class="text-fuchsia-400">=</span> <span class="text-emerald-400">"paused"</span>;
 
-<h2 class="cxmc9 cg0ht cpynq crvmr">Introduction</h2>
-<p>The susceptible, Infectious and Recovered (SIR) model is one of the popular compartmental mathematical models used to study behavior of disease data. It aims to predict the number of susceptible, infectious, and recovered individuals. Here, the population is divided into one of the three mutually exclusive compartments, that is: an individual can be in exactly one of the compartments. Although the name of the Recovered compartment can be misleading because it represents not only individuals that have recovered from the disease, but also individuals that are no longer contagious and individuals that have passed away because of the disease. For that reason, it can also be understood as the removed compartment. This model is often used partly due to its simplicity: researchers can model disease behavior easily. There are many extensions possible for the SIR model. The model used in this simulation is the basic SIR model because it is simple and effective to apply, and it offers a good starting foundation for further research possibilities. In this model, immunity is permanent: an individual cannot return into the susceptible compartment. A lot of research has been done on the SIR model and its different applications. One research aimed to predict the hospital capacity needed during the COVID-19 pandemic. Other research primarily shows predictions on a single disease. This research will aim to offer insights on how differences in a population, meaning the susceptible and infected individuals, the infection rate, and the recovery rate will influence the course of the disease spread prediction. Any significant results that come up can help prepare countries for new pandemics. The focus of this research lies entirely on the basic SIR model, where factors such as immunity, immigration, birth rates and other death rates are disregarded entirely.</p>
-</div>
-<div class="c9gi4">
-<h2 class="cxmc9 cg0ht cpynq crvmr">Methodology</h2>
-<p>To measure how the different variables influence the disease spreading, a simulation will be used. The simulation will be programmed from scratch, and it will provide plots that consider the variables.</p>
+<span class="text-sky-300">element</span>.<span class="text-sky-300">style</span>.<span class="text-sky-300">webkitAnimationPlayState</span> <span class="text-fuchsia-400">=</span> <span class="text-emerald-400">"running"</span>;</code>
+</pre>
+                                        <div class="space-y-4">
+                                            <h3 class="h3 font-aspekta text-slate-800 dark:text-slate-100">Obtaining the Current Keyvalue Percentage</h3>
+                                            <p>
+                                                Unfortunately, at this time, there is no way to get the exact current “percentage completed” of a CSS keyframe animation. <strong class="font-medium text-slate-800 dark:text-slate-100">The best method to approximate it is using a setInterval function</strong> that iterates 100 times during the animation, which is essentially: the animation duration in ms / 100. For example, if the animation is 4 seconds long, then the setInterval needs to run every 40 milliseconds (4000/100).
+                                            </p>
+                                        </div>
+<pre class="overflow-x-auto text-sm text-slate-500 bg-slate-800 p-4 rounded leading-tight">
+<code class="font-pt-mono"><span class="text-sky-300">var showPercent</span> <span class="text-fuchsia-400">=</span> <span class="text-sky-300">window</span>.<span class="text-sky-300">setInterval</span>(<span class="text-emerald-400">function</span>() {
 
-<p>The primary relation between the compartments susceptible, infected, and recovered can be written as:</p>
+  <span class="text-emerald-400">if</span> (<span class="text-sky-300">currentPercent</span> <span class="text-fuchsia-400">&lt;</span> <span class="text-pink-400">100</span>) {
 
-<blockquote>
-N = St + It + Rt
-<pre class="cgr7g c2bb0 ca9r6 cx6ng c9xwx cme8e cmy5q"><code class="c4j9y"><span class="ct35c">St</span><span class="ct35c"> + It</span><span class="ct35c">+ Rt</span> <span class="cb1xz">=</span> <span class="cd909">N</span>;
-</blockquote>
+    <span class="text-sky-300">currentPercent</span> <span class="text-fuchsia-400">+=</span> <span class="text-pink-400">1</span>;
 
-<p>Here, N is the total population size, while St, It, and Rt are the sizes of susceptible, infected, and recovered individuals as time (t) passes. This equation shows that the sum of the compartment population sizes remains constant, no matter how the three compartments develop over time. This then implies the derivative equation of this previous equation:</p>
+  } <span class="text-emerald-400">else</span> {
 
-<blockquote>
-    <pre class="cgr7g c2bb0 ca9r6 cx6ng c9xwx cme8e cmy5q"><code class="c4j9y"><span class="ct35c">dS/dt</span><span class="ct35c"> + dI/dt</span><span class="ct35c">+ dR/dt</span> <span class="cb1xz">=</span> <span class="cd909">0</span>;
-dS/dt + dI/dt + dR/dt = 0
-</blockquote>
+    <span class="text-sky-300">currentPercent</span> <span class="text-fuchsia-400">=</span> <span class="text-pink-400">0</span>;
 
-<p>This equation signifies that the sum of the rates of changes in compartments should remain constant. This signifies that no matter how the compartment rates change at each time, they will never increase the size of the total population.</p>
+  }
 
-<p>For this model to work, we assume that infections have a fixed chance of happening (termed with transmission rate β) and that all individuals have an equal probability of coming into contact with one another. On top of that, the basic model assumes a closed population: the size of the population is fixed and does not change due to any external factors such as births or migration.</p>
+  // Updates a div that displays the current percent
 
-<p>The model uses a set of differential equations to describe the flow of individuals between these compartments. The equations describe how the number of individuals in each compartment changes over time based on the rates of transmission and recovery.</p>
+  <span class="text-sky-300">result</span>.<span class="text-sky-300">innerHTML</span> <span class="text-fuchsia-400">=</span> <span class="text-sky-300">currentPercent</span>;
 
-<p>The transmission rate (β) is a constant that describes the rate at which the susceptible becomes infected when they encounter infected individuals. It can be read as the number of contacts needed to infect another person. Transmission rates are unique for different diseases.</p>
-
-<p>The constant recovery rate (γ) describes the rate at which the infected recover and become "immune" to the disease (meaning they get moved into the recovered compartment). The inverse of the recovery rate (γ⁻¹) represents the average duration of infection before an individual recovers. For example, given the recovery rate (γ) of 0.2, then the average duration of infection is 1/0.2 = 5 days. For the number of recovered individuals, you multiply the recovery rate by the number of infected, as the number of recovered follows directly from the number of infected. To get the number of susceptible individuals after time t, you multiply the transmission rate with the number of susceptible and infected individuals. Finally, the number of infectious individuals is given by deducting the number of recovered from the number susceptible. Thus, the equations for the rates of changes are given as follows:</p>
-
-<blockquote>
-dS/dt = -γStIt
-<pre class="cgr7g c2bb0 ca9r6 cx6ng c9xwx cme8e cmy5q"><code class="c4j9y"><span class="ct35c">dS/dt</span>=</span> <span class="cd909">-γStIt</span>;
-</blockquote>
-<blockquote>
-dI/dt = βStIt - γIt
-<pre class="cgr7g c2bb0 ca9r6 cx6ng c9xwx cme8e cmy5q"><code class="c4j9y"><span class="ct35c">dI/dt</span>=</span> <span class="cd909">βStIt - γIt</span>;
-</blockquote>
-<blockquote>
-<pre class="cgr7g c2bb0 ca9r6 cx6ng c9xwx cme8e cmy5q"><code class="c4j9y"><span class="ct35c">dR/dt</span>=</span> <span class="cd909">γIt</span>;
-dR/dt = γIt
-</blockquote>
-
-<p>Where, as mentioned above, S, I, and R are the number of individuals in each compartment, and parameter t is the time. The first equation calculates the number of susceptible individuals, the second equation calculates the number of infected, while the third equation calculates the recovered population. As can be deduced from the equations, the rate of susceptible individuals is negative, while the rate of recovered individuals is positive. The rate of infected individuals is the difference between the rate of susceptible individuals and the rate of recovered individuals.</p>
-
-<h1>Results</h1>
-<p>The results come from multiple simulations with different variables. The changed variables consist of the initial population size, the initial number of infected individuals, the transmission rate, and the recovery rate.</p>
-
-<p>Since equalizing or increasing the recovery rate over the transmission rate (γ ≥ β) would lead to no epidemic outbreak, as well as the disease its rates would remain unchanged constants, no significant results could be noted.</p>
-
-<p>The plotted graphs show obvious similarities: the susceptible population starts at the highest and follows a downhill trend, as can be seen from the rate of changes formula. Furthermore, the infected population sees an unimodal equation, where it starts at the initial number of infected, I₀, and goes up. Eventually, the graph reaches a highest point: the time at which there are most infected individuals in the population. After that, the equation starts a downhill trend, meaning that the rate of change is negative for the infectious population at that time.</p>
-</div> <div class="c9gi4">
-<h2 class="cxmc9 cg0ht cpynq crvmr">Discussion</h2>
-<p>Differences in the SIR disease prediction model for different sets of variables have been shown in this research. The SIR model is sufficient to simulate the spreading of a disease in a basic matter, but it is not the most realistic without modeling the behavior of subpopulations and humanity as it is. Different, more complex SIR models, where variables such as immunity, vaccinations, exposure rate, births were taken into consideration, would give more realistic results for predicting diseases. However, the results from the basic SIR model are valuable because the model is widely used and undemanding to understand, while giving a general insight on the course of a disease.</p>
-
-<p>Other research shows results that are more specific for their research. The research conducted here can be seen as a base layer for further research to build upon. It is beneficial to be able to understand the fundamentals of this model and expectations, so concluding this research is of value to further research and topics where disease spreading simulations are used.</p>
-
-<h1>Conclusion</h1>
-<p>It was shown that a higher number of starting susceptible individuals leads to a higher rate of infection. This means that the number of susceptible usually goes down quicker and the number of infected spikes up quicker as well. As for the initial number of infected individuals, a higher initial number signifies a quicker breakout of the pandemic. This can be seen in the simulation as the infected spike moves to the left.</p>
-
-<p>Accurately predicting the course of a disease is a difficult task, without accurately modeling behavior. The more of the external factors you take into consideration, the more accurate simulating becomes. Nonetheless, the findings in this research help humans be prepared for pandemics because it illustrates the course of a disease for given population sizes. This can be of use when looking at a pandemic in different countries. This is the main reason why this research was conducted.</p>
-
-<p>As the current SIR model serves as a base layer, further research could be done with the different models and variations of SIR, that account for a changing population in any way. This could be interesting because it could be compared to the current research. On top of that, it could give different insights on disease predictions, which could be more accurate or indicate other findings.</p>
-</div>
-<div class="c9gi4">
-<h2 class="cxmc9 cg0ht cpynq crvmr">References</hw>
-<ol>
-  <li>S. Abolmaali, S. Shirzaei, "A comparative study of SIR Model, Linear Regression, Logistic Function and ARIMA Model for forecasting COVID-19 cases", AIMS Public Health, pages 598-613, 2021.</li>
-  <li>J. Tolles, T. Luong, "Modeling Epidemics With Compartmental Models", JAMA, pages 2515-2516, 2020.</li>
-  <li>C. Alger, K. Todd, "The SIR Model of Disease Spread", pages 2-6, 2015.</li>
-  <li>Weissman GE, Crane-Droesch A, Chivers C, et al, "Locally Informed Simulation to Predict Hospital Capacity Needs During the COVID-19 Pandemic", Ann Intern Med, pages 21-28, 2020.</li>
-  <li>Bjornstad, O.N., Shea, K., Krzywinski, M. et al. "The SEIRS model for infectious disease dynamics." Nat Methods 17, 557–558 (2020).</li>
-</ol>
-</div>
+}, <span class="text-fuchsia-400">40</span>);</code>
+</pre>
+                                        <div class="space-y-4">
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Use Your Head</h2>
+                                            <p>
+                                                Before starting to code, thinking about and planning how a transition or animation should run is the best way to minimize your problems and get the effect you desire. Even better than Googling for solutions later! The techniques and tricks overviewed in this article may not always be the best way to create the animation your project calls for.
+                                            </p>
+                                            <p>
+                                                Here's a little example of <strong class="font-medium text-slate-800 dark:text-slate-100">where getting clever with HTML and CSS</strong> alone can solve a problem where you might have thought to go to JavaScript.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">In Conclusion</h2>
+                                            <ul class="list-disc list-inside space-y-2">
+                                                <li>Developers used to need to choose between CSS and JavaScript.</li>
+                                                <li>In JavaScript, CSS transitions are generally easier to work with than CSS animations.</li>
+                                                <li>CSS Matrices are generally a pain to deal with, especially for beginners.</li>
+                                                <li>Thinking about what should be done and planning how to do it.</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    
                                 </article>
 
                             </div>
