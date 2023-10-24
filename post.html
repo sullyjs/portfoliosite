@@ -272,43 +272,43 @@ number susceptible. Thus, the equations for the rates of changes are given as fo
 
 <pre class="overflow-x-auto text-sm text-slate-500 bg-slate-800 p-4 rounded leading-tight">
 <code class="font-pt-mono">
-    <span class="text-pink-400">>import numpy as np</span>
+    <span class="text-pink-400">import numpy as np</span>
     <span class="text-pink-400">import matplotlib.pyplot as plt</span>
 
     <span class="text-sky-300">beta</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">0.4</span>;
     <span class="text-sky-300">gamma</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">0.3</span>;
-    <span class="text-sky-300">N</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000 </span>;
-    <span class="text-sky-300">I0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000 </span>;
-    <span class="text-sky-300">R0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000 </span>;
-    <span class="text-sky-300">S0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">N </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">I0 </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">R0</span>;
-    <span class="text-sky-300">tmax</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">365 </span>;
+    <span class="text-sky-300">N</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000</span>;
+    <span class="text-sky-300">I0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000</span>;
+    <span class="text-sky-300">R0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000</span>;
+    <span class="text-sky-300">S0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">N</span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">I0 </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">R0</span>;
+    <span class="text-sky-300">tmax</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">365</span>;
     <span class="text-sky-300">dt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">1/24</span>;
 
-    <span class="text-sky-300">t</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.arange(0, t_max+dt, dt)</span>;
-    <span class="text-sky-300">S</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.zeros_like(t)</span>;
-    <span class="text-sky-300">I</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.zeros_like(t)</span>;
-    <span class="text-sky-300">R</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.zeros_like(t)</span>;
+    <span class="text-sky-300">t</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np</span>.<span class="text-pink-400">arange</span>(<span class="text-sky-300">0</span>, <span class="text-sky-300">tmax</span>+<span class="text-sky-300">dt</span>, <span class="text-sky-300">dt</span>);
+    <span class="text-sky-300">S</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np</span>.<span class="text-pink-400">zeros_like</span>(<span class="text-sky-300">t</span>);
+    <span class="text-sky-300">I</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np</span>.<span class="text-pink-400">zeros_like</span>(<span class="text-sky-300">t</span>);
+    <span class="text-sky-300">R</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np</span>.<span class="text-pink-400">zeros_like</span>(<span class="text-sky-300">t</span>);
     <span class="text-sky-300">S[0]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">S0</span>;
     <span class="text-sky-300">I[0]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">R0</span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">I0 </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">R0</span>;
     <span class="text-sky-300">R[0]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">R0</span>;
     <span class="text-sky-300">dt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">1/24</span>;
 
-    <span class="text-emerald-400">for</span>i<span class="text-sky-300">in</span><span class="text-emerald-400">range</span>(<span class="text-emerald-400">1</span>,<span class="text-emerald-400">len</span>t()):
-    <span class="text-sky-300">     dSdt</span><span class="text-fuchsia-400">=</span> -<span class="text-emerald-400">beta</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">S[i-1]</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span><span class="text-fuchsia-400">/</span><span class="text-emerald-400">N </span>;
-    <span class="text-sky-300">     dIdt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">beta</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">S[i-1]</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span><span class="text-fuchsia-400">/</span><span class="text-emerald-400">N </span>-<span class="text-emerald-400">gamma</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span>;
-    <span class="text-sky-300">     dRdt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">gamma</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span>;
-    <span class="text-sky-300">     S[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">S[i-1]</span><span class="text-fuchsia-400">+</span><span class="text-emerald-400">dSdt</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">dt</span>;
-    <span class="text-sky-300">     I[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">I[i-1]</span><span class="text-fuchsia-400">+</span><span class="text-emerald-400">dIdt</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">dt</span>;
-    <span class="text-sky-300">     R[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">R[i-1]</span><span class="text-fuchsia-400">+</span><span class="text-emerald-400">dRdt</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">dt</span>;
+    <span class="text-emerald-400">for</span> i<span class="text-sky-300"> in</span><span class="text-emerald-400"> range</span>(<span class="text-emerald-400">1</span>,<span class="text-emerald-400"> len </span>(<span class="text-sky-300">t</span>)):
+    <span class="text-sky-300">     dSdt</span><span class="text-fuchsia-400">=</span> -<span class="text-emerald-400"> beta</span><span class="text-fuchsia-400"> *</span><span class="text-emerald-400"> S[i-1]</span><span class="text-fuchsia-400"> *</span><span class="text-sky-300"> I[i]</span><span class="text-fuchsia-400">/</span><span class="text-emerald-400"> N </span>;
+    <span class="text-sky-300">     dIdt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400"> beta</span><span class="text-fuchsia-400"> *</span><span class="text-emerald-400"> S[i-1]</span><span class="text-fuchsia-400"> *</span><span class="text-sky-300"> I[i]</span><span class="text-fuchsia-400">/</span><span class="text-emerald-400"> N </span>-<span class="text-emerald-400">gamma</span><span class="text-fuchsia-400"> *</span><span class="text-sky-300"> I[i]</span>;
+    <span class="text-sky-300">     dRdt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400"> gamma</span><span class="text-fuchsia-400"> *</span><span class="text-sky-300"> I[i]</span>;
+    <span class="text-sky-300">     S[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400"> S[i-1]</span><span class="text-fuchsia-400"> +</span><span class="text-emerald-400"> dSdt</span><span class="text-fuchsia-400"> *</span><span class="text-emerald-400"> dt</span>;
+    <span class="text-sky-300">     I[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400"> I[i-1]</span><span class="text-fuchsia-400"> +</span><span class="text-emerald-400"> dIdt</span><span class="text-fuchsia-400"> *</span><span class="text-emerald-400"> dt</span>;
+    <span class="text-sky-300">     R[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400"> R[i-1]</span><span class="text-fuchsia-400"> +</span><span class="text-emerald-400"> dRdt</span><span class="text-fuchsia-400"> *</span><span class="text-emerald-400"> dt</span>;
     
 
-    plt<span class="text-pink-400">>plot</span>(t,<span class="text-sky-300">S</span>, label<span class="text-fuchsia-400">=</span> "Susceptible", color<span class="text-fuchsia-400">=</span> )
-    plt<span class="text-pink-400">>plot</span>(t,<span class="text-sky-300">I</span>, label<span class="text-fuchsia-400">=</span> "Infected", color<span class="text-fuchsia-400">=</span> "r")
-    plt<span class="text-pink-400">>plot</span>(t,<span class="text-sky-300">R</span>, label<span class="text-fuchsia-400">=</span> "Recovered",color<span class="text-fuchsia-400">=</span> "g")
-    plt<span class="text-pink-400">>xlabel</span>(<span class="text-sky-300">Time in days</span>)
-    plt<span class="text-pink-400">>ylabel</span>(<span class="text-sky-300">Number of individuals</span>)
-    plt<span class="text-pink-400">>legend</span>()
-    plt<span class="text-pink-400">>show</span>()
+    plt<span class="text-pink-400">.plot</span>(<span class="text-sky-300">t</span>,<span class="text-sky-300">S</span>, label<span class="text-fuchsia-400">=</span> "Susceptible")
+    plt<span class="text-pink-400">.plot</span>(<span class="text-sky-300">t</span>,<span class="text-sky-300">I</span>, label<span class="text-fuchsia-400">=</span> "Infected", color<span class="text-fuchsia-400">=</span> "r")
+    plt<span class="text-pink-400">.plot</span>(<span class="text-sky-300">t</span>t,<span class="text-sky-300">R</span>, label<span class="text-fuchsia-400">=</span> "Recovered",color<span class="text-fuchsia-400">=</span> "g")
+    plt<span class="text-pink-400">.xlabel</span>(<span class="text-sky-300">"Time in days"</span>)
+    plt<span class="text-pink-400">.ylabel</span>(<span class="text-sky-300">"Number of individuals"</span>)
+    plt<span class="text-pink-400">.legend</span>()
+    plt<span class="text-pink-400">.show</span>()
     
 </code>
 </pre>
