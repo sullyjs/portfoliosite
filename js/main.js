@@ -71,4 +71,4 @@ const changeFontButton = document.getElementById('changeFontButton');
         changeFontButton.addEventListener('click', () => {
             // Change the font to a different font
             body.style.fontFamily = "Verdana, sans-serif";
-        });
+        });S
