@@ -200,21 +200,20 @@
                                         <div class="space-y-4">
                                             <p>
                                                 The susceptible, Infectious and Recovered (SIR) model is one of the popular compart-
-mental mathematical models used to study behavior of disease data [1]. It aims to predict
+mental mathematical models used to study behavior of disease data. It aims to predict
 the number of susceptible, infectious, and recovered individuals. Here, the population is
 divided into one of the three mutually exclusive compartments, that is: an individual can
-be in exactly one of the compartments. Although the name of the Recovered compartment
+be in exactly one of the compartments. <br><br>Although the name of the Recovered compartment
 can be misleading because it represents not only individuals that have recovered from the
 disease, but also individuals that are no longer contagious and individuals that have passed
 away because of the disease. For that reason, it can also be understood as the removed
 compartment [2]. This model is often used partly due to its simplicity: researchers can
-model disease behavior easily [2]. There are many extensions possible for the SIR model.
+model disease behavior easily. <br><br>There are many extensions possible for the SIR model.
 The model used in this simulation is the basic SIR model because it is simple and effective
 to apply, and it offers a good starting foundation for further research possibilities. In this
 model, immunity is permanent: an individual cannot return into the susceptible compart-
 ment. A lot of research has been done on the SIR model and its different applications.
-One research aimed to predict the hospital capacity needed during the COVID-19 pandemic
-[4]. Other research primarily shows predictions on a single disease. This research will aim
+One research aimed to predict the hospital capacity needed during the COVID-19 pandemic.<br><br> Other research primarily shows predictions on a single disease. This research will aim
 to offer insights on how differences in a population, meaning the susceptible and infected
 individuals, the infection rate, and the recovery rate will influence the course of the disease
 spread prediction. Any significant results that come up can help prepare countries for new
@@ -247,16 +246,15 @@ be written as:
                                             <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Constant rates</h2>
                                             The model uses a set of differential equations to describe the flow of individuals be-
 tween these compartments. The equations describe how the number of individuals in each
-compartment changes over time based on the rates of transmission and recovery.
-The transmission rate (β) is a constant that describes the rate at which the susceptible
+compartment changes over time based on the rates of transmission and recovery.<br><br>
+- The transmission rate (β) is a constant that describes the rate at which the susceptible
 becomes infected when they encounter infected individuals. It can be read as the number
-of contacts needed to infect another person. Transmission are unique for different diseases.
-The constant recovery rate (γ) describes the rate at which the infected recover and become
-"immune" to the disease (meaning they get moved into the recovered compartment). The
+of contacts needed to infect another person. Transmission are unique for different diseases.<br>
+- The constant recovery rate (γ) describes the rate at which the infected recover and become
+"immune" to the disease (meaning they get moved into the recovered compartment).<br>- The
 inverse of the recovery rate (γ−1) represents the average duration of infection before an
 individual recovers. For example, given the recovery rate (γ) 0.2, then the average duration
-of infection is 1
-0.2 = 5 days. For the number of recovered individuals, you multiply the
+of infection is 1 / 0.2 = 5 days.<br><br> For the number of recovered individuals, you multiply the
 recovery rate by the number of infected, as the number of recovered follows directly from the
 number of infected. To get the number of susceptible individuals after t time, you multiply
 the transmission rate with the number of susceptible and infected individuals. Finally, the
