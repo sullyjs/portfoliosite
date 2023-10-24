@@ -159,7 +159,7 @@
                                     <header>
                                         <div class="flex items-center justify-between mb-1">
                                             <!-- Post date -->
-                                            <div class="text-xs text-slate-500 uppercase"><span class="text-sky-500">—</span> Dec 24, 2023 <span class="text-slate-400 dark:text-slate-600">·</span> 4 Min read</div>
+                                            <div class="text-xs text-slate-500 uppercase"><span class="text-sky-500">—</span> Oct 3, 2022 <span class="text-slate-400 dark:text-slate-600">·</span> 7 Min read</div>
                                             <!-- Share buttons -->
                                             <ul class="inline-flex">
                                                 <li>
@@ -185,106 +185,139 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <h1 class="h1 font-aspekta mb-4">How to Control CSS Animations with JavaScript</h1>
+                                        <h1 class="h1 font-aspekta mb-4">How to build a SIR model with Numpy</h1>
                                     </header>
                                     <!-- Post content -->
                                     <div class="text-slate-500 dark:text-slate-400 space-y-8">
                                         <p>
-                                            When it comes to animations on the web, developers need to measure the animation's requirements with the right technology -- CSS or JavaScript.
+                                            The SIR model is a well-known way to simulate disease spreading for researchers. It has been
+                                            used for much research considering COVID-19. The model consists of the mutually exclusive sus-
+                                            ceptible, infected, and recovered compartments. The base model is simple and can give a good
+                                            indication of the course of a disease. Using the equations for the different compartments and initial
+                                            states, the disease model can be simulated.
                                         </p>
-                                        <img class="w-full" src="./images/post-image.jpg" width="692" height="390" alt="Post" />
+                                        <img class="w-full" src="https://i.imgur.com/1pdeVbr.png" width="692" height="390" alt="Post" />
                                         <div class="space-y-4">
                                             <p>
-                                                Web designers sometimes believe that animating in CSS is more difficult than animating in JavaScript. <strong class="font-medium text-slate-800 dark:text-slate-100">While CSS animation does have some limitations</strong>, most of the time it's more capable than we give it credit for! Not to mention, typically more performant.
-                                            </p>
-                                            <p>
-                                                Coupled with a touch of JavaScript, CSS animations and transitions are able to accomplish hardware-accelerated animations and interactions more efficiently than most JavaScript libraries.
-                                                Let's jump straight in!
-                                            </p>
-                                            <p>
-                                                Let's jump straight in!
+                                                The susceptible, Infectious and Recovered (SIR) model is one of the popular compart-
+mental mathematical models used to study behavior of disease data [1]. It aims to predict
+the number of susceptible, infectious, and recovered individuals. Here, the population is
+divided into one of the three mutually exclusive compartments, that is: an individual can
+be in exactly one of the compartments. Although the name of the Recovered compartment
+can be misleading because it represents not only individuals that have recovered from the
+disease, but also individuals that are no longer contagious and individuals that have passed
+away because of the disease. For that reason, it can also be understood as the removed
+compartment [2]. This model is often used partly due to its simplicity: researchers can
+model disease behavior easily [2]. There are many extensions possible for the SIR model.
+The model used in this simulation is the basic SIR model because it is simple and effective
+to apply, and it offers a good starting foundation for further research possibilities. In this
+model, immunity is permanent: an individual cannot return into the susceptible compart-
+ment. A lot of research has been done on the SIR model and its different applications.
+One research aimed to predict the hospital capacity needed during the COVID-19 pandemic
+[4]. Other research primarily shows predictions on a single disease. This research will aim
+to offer insights on how differences in a population, meaning the susceptible and infected
+individuals, the infection rate, and the recovery rate will influence the course of the disease
+spread prediction. Any significant results that come up can help prepare countries for new
+pandemics. The focus of this research lies entirely on the basic SIR model, where factors
+such as immunity, immigration, birth rates and other death rates are disregarded entirely.
                                             </p>
                                         </div>
                                         <div class="space-y-4">
-                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Manipulating CSS Transitions</h2>
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Methodology</h2>
                                             <p>
-                                                There are countless questions on coding forums related to triggering and pausing an element's transition. The solution is actually quite simple using JavaScript.
+                                                To measure how the different variables influence the disease spreading, a simulation will
+be used. The simulation will be programmed from scratch, and it will provide plots that
+consider the variables.
+The primary relation between the compartments susceptible, infected and recovered can
+be written as:
+                                            </p><br>
+                                            <p>
+                                                N = St + It + Rt
+
                                             </p>
                                             <p>
-                                                To trigger an element's transition, toggle a class name on that element that triggers it.
-                                            </p>
-                                            <p>
-                                                To pause an element's transition, use getComputedStyle and getPropertyValue at the point in the transition you want to pause it. <a class="font-medium text-sky-500 hover:underline" href="#0">Then set those CSS properties</a> of that element equal to those values you just got.
-                                            </p>
+                                                Here, N is the total population size, while St, It and Rt are the sizes of susceptible,
+                                                infected, and recovered individuals as time (t) passes [3]. This equation shows that the sum of
+                                                the compartment population sizes remains constant, no matter how the three compartments
+                                                develop over time. This then implies the derivate equation of this previous equation [3]:</p>
+                                                <br>
+                                               <p> dS/dt + dI/dt + dR/dt = 0</p>
                                         </div>
                                         <div class="space-y-4">
-                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Using CSS “Callback Functions”</h2>
-                                            <p>
-                                                Some of the most useful yet little-known JavaScript tricks for manipulating CSS transitions and animations are the DOM events they fire. Like: <strong class="font-medium text-slate-800 dark:text-slate-100">animationend, animationstart, and animationiteration for animations</strong> and transitionend for transitions. You might guess what they do. These animation events fire when the animation on an element ends, starts, or completes one iteration, respectively.
-                                            </p>
-                                            <p>
-                                                These events need to be vendor prefixed at this time, so in this demo, we use a function developed by Craig Buckler called PrefixedEvent, which has the parameters element, type, and callback to help make these events cross-browser. Here is his useful article on capturing CSS animations with JavaScript. And <a class="font-medium text-sky-500 hover:underline" href="#0">here is another one</a> determining which animation (name) the event is firing for.
-                                            </p>
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Constant rates</h2>
+                                            The model uses a set of differential equations to describe the flow of individuals be-
+tween these compartments. The equations describe how the number of individuals in each
+compartment changes over time based on the rates of transmission and recovery.
+The transmission rate (β) is a constant that describes the rate at which the susceptible
+becomes infected when they encounter infected individuals. It can be read as the number
+of contacts needed to infect another person. Transmission are unique for different diseases.
+The constant recovery rate (γ) describes the rate at which the infected recover and become
+"immune" to the disease (meaning they get moved into the recovered compartment). The
+inverse of the recovery rate (γ−1) represents the average duration of infection before an
+individual recovers. For example, given the recovery rate (γ) 0.2, then the average duration
+of infection is 1
+0.2 = 5 days. For the number of recovered individuals, you multiply the
+recovery rate by the number of infected, as the number of recovered follows directly from the
+number of infected. To get the number of susceptible individuals after t time, you multiply
+the transmission rate with the number of susceptible and infected individuals. Finally, the
+number of infectious individuals is given by deducting the number of recovered from the
+number susceptible. Thus, the equations for the rates of changes are given as follows:<br><br>dS / dt = - gamma * St * It<br>dI / dt = beta * St * It - gamma * It<br>dR / dt = gamma * It<br><br>For initial values, S0 and I0 both need to be larger than 0.</p>
                                         </div>
                                         <div class="space-y-4">
-                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Manipulating CSS Transitions</h2>
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Let's put this all in code!</h2>
                                             <p>
-                                                Like we just learned, we can watch elements and react to animation-related events: animationStart, animationIteration, and animationEnd. But what happens if you want to change the CSS animation mid-animation? This requires a bit of trickery!
+                                                Like we just learned, writing a code for a basic SIR graph is not that hard. Let's put all the logic to use in code.
                                             </p>
                                         </div>
-                                        <div class="space-y-4">
-                                            <h3 class="h3 font-aspekta text-slate-800 dark:text-slate-100">The animation-play-state Property</h3>
-                                            <p>
-                                                The animation-play-state property of CSS is incredibly helpful when you simply need to pause an animation and potentially continue it later. You can change that CSS through JavaScript like this (mind your prefixes):
-                                            </p>
-                                        </div>
+
 <pre class="overflow-x-auto text-sm text-slate-500 bg-slate-800 p-4 rounded leading-tight">
-<code class="font-pt-mono"><span class="text-sky-300">element</span>.<span class="text-sky-300">style</span>.<span class="text-sky-300">webkitAnimationPlayState</span> <span class="text-fuchsia-400">=</span> <span class="text-emerald-400">"paused"</span>;
+<code class="font-pt-mono">
+    <span class="text-pink-400">>import numpy as np</span>
+    <span class="text-pink-400">import matplotlib.pyplot as plt</span>
 
-<span class="text-sky-300">element</span>.<span class="text-sky-300">style</span>.<span class="text-sky-300">webkitAnimationPlayState</span> <span class="text-fuchsia-400">=</span> <span class="text-emerald-400">"running"</span>;</code>
+    <span class="text-sky-300">beta</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">0.4</span>;
+    <span class="text-sky-300">gamma</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">0.3</span>;
+    <span class="text-sky-300">N</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000 </span>;
+    <span class="text-sky-300">I0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000 </span>;
+    <span class="text-sky-300">R0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">20000000 </span>;
+    <span class="text-sky-300">S0</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">N </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">I0 </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">R0</span>;
+    <span class="text-sky-300">tmax</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">365 </span>;
+    <span class="text-sky-300">dt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">1/24</span>;
+
+    <span class="text-sky-300">t</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.arange(0, t_max+dt, dt)</span>;
+    <span class="text-sky-300">S</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.zeros_like(t)</span>;
+    <span class="text-sky-300">I</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.zeros_like(t)</span>;
+    <span class="text-sky-300">R</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">np.zeros_like(t)</span>;
+    <span class="text-sky-300">S[0]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">S0</span>;
+    <span class="text-sky-300">I[0]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">R0</span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">I0 </span><span class="text-fuchsia-400">-</span><span class="text-emerald-400">R0</span>;
+    <span class="text-sky-300">R[0]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">R0</span>;
+    <span class="text-sky-300">dt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">1/24</span>;
+
+    <span class="text-emerald-400">for</span>i<span class="text-sky-300">in</span><span class="text-emerald-400">range</span>(<span class="text-emerald-400">1</span>,<span class="text-emerald-400">len</span>t()):
+    <span class="text-sky-300">     dSdt</span><span class="text-fuchsia-400">=</span> -<span class="text-emerald-400">beta</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">S[i-1]</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span><span class="text-fuchsia-400">/</span><span class="text-emerald-400">N </span>;
+    <span class="text-sky-300">     dIdt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">beta</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">S[i-1]</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span><span class="text-fuchsia-400">/</span><span class="text-emerald-400">N </span>-<span class="text-emerald-400">gamma</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span>;
+    <span class="text-sky-300">     dRdt</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">gamma</span><span class="text-fuchsia-400">*</span><span class="text-sky-300">I[i]</span>;
+    <span class="text-sky-300">     S[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">S[i-1]</span><span class="text-fuchsia-400">+</span><span class="text-emerald-400">dSdt</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">dt</span>;
+    <span class="text-sky-300">     I[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">I[i-1]</span><span class="text-fuchsia-400">+</span><span class="text-emerald-400">dIdt</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">dt</span>;
+    <span class="text-sky-300">     R[i]</span><span class="text-fuchsia-400">=</span> <span class="text-emerald-400">R[i-1]</span><span class="text-fuchsia-400">+</span><span class="text-emerald-400">dRdt</span><span class="text-fuchsia-400">*</span><span class="text-emerald-400">dt</span>;
+    
+
+    plt<span class="text-pink-400">>plot</span>(t,<span class="text-sky-300">S</span>, label<span class="text-fuchsia-400">=</span> "Susceptible", color<span class="text-fuchsia-400">=</span> )
+    plt<span class="text-pink-400">>plot</span>(t,<span class="text-sky-300">I</span>, label<span class="text-fuchsia-400">=</span> "Infected", color<span class="text-fuchsia-400">=</span> "r")
+    plt<span class="text-pink-400">>plot</span>(t,<span class="text-sky-300">R</span>, label<span class="text-fuchsia-400">=</span> "Recovered",color<span class="text-fuchsia-400">=</span> "g")
+    plt<span class="text-pink-400">>xlabel</span>(<span class="text-sky-300">Time in days</span>)
+    plt<span class="text-pink-400">>ylabel</span>(<span class="text-sky-300">Number of individuals</span>)
+    plt<span class="text-pink-400">>legend</span>()
+    plt<span class="text-pink-400">>show</span>()
+    
+</code>
 </pre>
+
                                         <div class="space-y-4">
-                                            <h3 class="h3 font-aspekta text-slate-800 dark:text-slate-100">Obtaining the Current Keyvalue Percentage</h3>
-                                            <p>
-                                                Unfortunately, at this time, there is no way to get the exact current “percentage completed” of a CSS keyframe animation. <strong class="font-medium text-slate-800 dark:text-slate-100">The best method to approximate it is using a setInterval function</strong> that iterates 100 times during the animation, which is essentially: the animation duration in ms / 100. For example, if the animation is 4 seconds long, then the setInterval needs to run every 40 milliseconds (4000/100).
-                                            </p>
-                                        </div>
-<pre class="overflow-x-auto text-sm text-slate-500 bg-slate-800 p-4 rounded leading-tight">
-<code class="font-pt-mono"><span class="text-sky-300">var showPercent</span> <span class="text-fuchsia-400">=</span> <span class="text-sky-300">window</span>.<span class="text-sky-300">setInterval</span>(<span class="text-emerald-400">function</span>() {
-
-  <span class="text-emerald-400">if</span> (<span class="text-sky-300">currentPercent</span> <span class="text-fuchsia-400">&lt;</span> <span class="text-pink-400">100</span>) {
-
-    <span class="text-sky-300">currentPercent</span> <span class="text-fuchsia-400">+=</span> <span class="text-pink-400">1</span>;
-
-  } <span class="text-emerald-400">else</span> {
-
-    <span class="text-sky-300">currentPercent</span> <span class="text-fuchsia-400">=</span> <span class="text-pink-400">0</span>;
-
-  }
-
-  // Updates a div that displays the current percent
-
-  <span class="text-sky-300">result</span>.<span class="text-sky-300">innerHTML</span> <span class="text-fuchsia-400">=</span> <span class="text-sky-300">currentPercent</span>;
-
-}, <span class="text-fuchsia-400">40</span>);</code>
-</pre>
-                                        <div class="space-y-4">
-                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">Use Your Head</h2>
-                                            <p>
-                                                Before starting to code, thinking about and planning how a transition or animation should run is the best way to minimize your problems and get the effect you desire. Even better than Googling for solutions later! The techniques and tricks overviewed in this article may not always be the best way to create the animation your project calls for.
-                                            </p>
-                                            <p>
-                                                Here's a little example of <strong class="font-medium text-slate-800 dark:text-slate-100">where getting clever with HTML and CSS</strong> alone can solve a problem where you might have thought to go to JavaScript.
-                                            </p>
-                                        </div>
-                                        <div class="space-y-4">
-                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">In Conclusion</h2>
-                                            <ul class="list-disc list-inside space-y-2">
-                                                <li>Developers used to need to choose between CSS and JavaScript.</li>
-                                                <li>In JavaScript, CSS transitions are generally easier to work with than CSS animations.</li>
-                                                <li>CSS Matrices are generally a pain to deal with, especially for beginners.</li>
-                                                <li>Thinking about what should be done and planning how to do it.</li>
-                                            </ul>
+                                            <h2 class="h2 font-aspekta text-slate-800 dark:text-slate-100">In Conclusion</h2><p>
+                                            Accurately predicting the course of a disease is a difficult task, without accurately mod-
+elling behaviour. The more of the external factors you take into consideration, the more
+accurate simulating becomes. Nevertheless, you can create a simple python SIR alghorithm, by using simple maths.</p>
                                         </div>
                                     </div>
                                 </article>
