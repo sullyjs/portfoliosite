@@ -25,7 +25,7 @@ if (lightSwitches.length > 0) {
   });
 }
 
-// JavaScript code to handle the search functionality
+// JavaScript code to handle the search functionality -- working on this
 
 // Get references to the input field and search results container
 const searchInput = document.getElementById('search');
@@ -42,7 +42,7 @@ function performSearch() {
 }
 
 
-// Add an event listener to the search input
+// Add an event listener to the search input -- working on this
 searchInput.addEventListener('input', performSearch);
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -65,6 +65,8 @@ document.getElementById('submit-button').addEventListener('click', function () {
   window.location.href = 'mailto:youremail@example.com';
 });
 
+
+//change font of site -- working on this
 const changeFontButton = document.getElementById('changeFontButton');
         const body = document.body;
 
