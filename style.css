@@ -2085,6 +2085,7 @@ input[type=range]::-moz-focus-outer {
 
 .font-medium{
   font-weight: 500;
+  font-family: Silkscreen, sans-serif;
 }
 
 .uppercase{
