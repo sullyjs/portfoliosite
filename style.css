@@ -97,6 +97,7 @@ body {
   /* 1 */
   line-height: inherit;
   font-family: 'Silkscreen';/* 4 */
+  font-family: 'Silkscreen', sans-serif;
   /* 2 */
 }
 
@@ -926,7 +927,7 @@ select{
   justify-content: center;
   white-space: nowrap;
   border-radius: 9999px;
-  font-family: Silkscreen, sans-serif;
+  font-family: 'Silkscreen', sans-serif;
   font-size: 0.875rem;
   line-height: 1.5715;
   font-weight: 500;
@@ -2020,19 +2021,19 @@ input[type=range]::-moz-focus-outer {
 }
 
 .font-Silkscreen{
-  font-family: Silkscreen, sans-serif;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 .font-aspektas{
-  font-family: Silkscreen, sans-serif;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 .font-inter{
-  font-family: Silkscreen, sans-serif;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 .font-pt-mono{
-  font-family: Silkscreen, monospace;
+  font-family: 'Silkscreen', monospace;
 }
 
 .text-2xl{
@@ -2085,7 +2086,7 @@ input[type=range]::-moz-focus-outer {
 
 .font-medium{
   font-weight: 500;
-  font-family: Silkscreen, sans-serif;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 .uppercase{
